@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(135deg, #ffdee9, #b5fffc);
+    overflow: hidden;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-family: "Great Vibes", cursive;
+    color: #ff1493;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 6px rgba(255, 182, 193, 0.3);
+}
+
+h1:nth-child(2) {
+    font-size: 2rem;
+    color: #ff69b4;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #ff6fa5, #ffb6c1);
+    box-shadow: 0 8px 18px rgba(255, 105, 180, 0.6);
+}
+
+/* Hiệu ứng bay nhẹ */
+body::after {
+    content: "💖";
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s linear infinite;
+    color: rgba(255, 255, 255, 0.8);
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -200px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* --- Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffd1dc, #ffe6ef);
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    color: #ff1493;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* --- Letter overlay --- */
+.letter-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe6ef, #fff0f5);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    padding: 20px;
+}
+
+.letter-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.letter {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+.letter h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.3rem;
+    color: #ff69b4;
+    margin-bottom: 15px;
+}
+
+.letter p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.7;
+    min-height: 120px;
+    word-wrap: break-word;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Transition overlay --- */
+.fade-screen {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    opacity: 0;
+    z-index: 999;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.fade-screen.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    button {
+        padding: 10px 22px;
+        font-size: 1rem;
+    }
+    .letter {
+        padding: 30px 25px;
+    }
+    .letter h1 {
+        font-size: 2rem;
+    }
+    .letter p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    button {
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+    .letter {
+        padding: 25px 20px;
+    }
+    .letter h1 {
+        font-size: 1.8rem;
+    }
+    .letter p {
+        font-size: 0.95rem;
+    }
+}
